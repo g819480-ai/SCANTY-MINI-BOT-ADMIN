@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#090909">
+  <title>SCANTY MINI BOT — Admin</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="bg-grid"></div>
+
+<section id="loginView" class="login-view">
+  <div class="login-card">
+
+    <div class="brand-mark">S</div>
+
+    <div class="eyebrow">PRIVATE CONTROL PANEL</div>
+
+    <h1>SCANTY <span>MINI BOT</span></h1>
+
+    <p>Administrator access</p>
+
+    <form id="loginForm">
+
+      <label for="adminPassword">
+        Admin password
+      </label>
+
+      <div class="password-wrap">
+        <input
+          id="adminPassword"
+          type="password"
+          autocomplete="current-password"
+          placeholder="Enter admin password"
+          required
+        >
+
+        <button
+          type="button"
+          id="togglePassword"
+          class="icon-btn"
+        >
+          ◉
+        </button>
+      </div>
+
+      <button class="primary-btn" type="submit">
+        ENTER ADMIN
+      </button>
+
+      <div id="loginError" class="form-error"></div>
+
+    </form>
+
+  </div>
+</section>
+
+
+<section id="dashboardView" class="dashboard hidden">
+
+<header class="topbar">
+
+  <div class="brand">
+
+    <div class="brand-mark small">
+      S
+    </div>
+
+    <div>
+      <strong>SCANTY MINI BOT</strong>
+      <span>ADMIN CONTROL</span>
+    </div>
+
+  </div>
+
+
+  <div class="top-actions">
+
+    <span
+      id="connectionBadge"
+      class="status-badge offline"
+    >
+      BACKEND OFFLINE
+    </span>
+
+    <button id="refreshBtn" class="ghost-btn">
+      Refresh
+    </button>
+
+    <button id="logoutBtn" class="ghost-btn danger">
+      Logout
+    </button>
+
+  </div>
+
+</header>
+
+
+<main class="content">
+
+<div class="page-heading">
+
+  <div>
+
+    <div class="eyebrow">
+      OVERVIEW
+    </div>
+
+    <h2>
+      Bot control center
+    </h2>
+
+    <p>
+      Monitor visitors and manage connected WhatsApp sessions.
+    </p>
+
+  </div>
+
+  <div id="lastUpdated" class="last-updated">
+    Not updated yet
+  </div>
+
+</div>
+
+
+<div id="notice" class="notice hidden"></div>
+
+
+<section class="stats-grid">
+
+<article class="stat-card">
+
+  <div class="stat-icon">
+    U
+  </div>
+
+  <div>
+    <span>Total users</span>
+    <strong id="totalUsers">—</strong>
+  </div>
+
+</article>
+
+
+<article class="stat-card">
+
+  <div class="stat-icon live">
+    ●
+  </div>
+
+  <div>
+    <span>Connected</span>
+    <strong id="connectedUsers">—</strong>
+  </div>
+
+</article>
+
+
+<article class="stat-card">
+
+  <div class="stat-icon">
+    S
+  </div>
+
+  <div>
+    <span>Saved sessions</span>
+    <strong id="savedSessions">—</strong>
+  </div>
+
+</article>
+
+
+<article class="stat-card">
+
+  <div class="stat-icon">
+    A
+  </div>
+
+  <div>
+    <span>Active now</span>
+    <strong id="activeNow">—</strong>
+  </div>
+
+</article>
+
+</section>
+
+
+<section class="panel">
+
+<div class="panel-head">
+
+  <div>
+
+    <h3>
+      Users & sessions
+    </h3>
+
+    <p>
+      Connected accounts and saved visitor sessions.
+    </p>
+
+  </div>
+
+
+  <div class="table-actions">
+
+    <input
+      id="searchInput"
+      type="search"
+      placeholder="Search number..."
+    >
+
+    <select id="filterSelect">
+
+      <option value="all">
+        All users
+      </option>
+
+      <option value="connected">
+        Connected
+      </option>
+
+      <option value="disconnected">
+        Disconnected
+      </option>
+
+    </select>
+
+  </div>
+
+</div>
+
+
+<div class="table-wrap">
+
+<table>
+
+<thead>
+
+<tr>
+  <th>WhatsApp</th>
+  <th>Status</th>
+  <th>Session</th>
+  <th>Last activity</th>
+  <th>Actions</th>
+</tr>
+
+</thead>
+
+
+<tbody id="usersTable">
+
+<tr>
+  <td colspan="5" class="empty">
+    Loading users...
+  </td>
+</tr>
+
+</tbody>
+
+</table>
+
+</div>
+
+</section>
+
+
+<footer>
+
+<span>
+SCANTY MINI BOT ADMIN
+</span>
+
+<span>
+Private management interface
+</span>
+
+</footer>
+
+</main>
+
+</section>
+
+
+<div id="confirmModal" class="modal hidden">
+
+<div class="modal-card">
+
+<div class="modal-warning">
+!
+</div>
+
+<h3 id="modalTitle">
+Remove user?
+</h3>
+
+<p id="modalText">
+This action cannot be undone.
+</p>
+
+<div class="modal-actions">
+
+<button
+  id="cancelModal"
+  class="ghost-btn"
+>
+Cancel
+</button>
+
+<button
+  id="confirmModalBtn"
+  class="danger-btn"
+>
+Confirm
+</button>
+
+</div>
+
+</div>
+
+</div>
+
+
+<script src="app.js"></script>
+
+</body>
+</html>
