@@ -1,7 +1,7 @@
-name = "scanty-mini-bot-admin"
+name = "scanty-mini-bot-admin1"
 main = "worker.js"
 compatibility_date = "2026-11-19"
 
 [assets]
-directory = "./"
+directory = "./assets"
 binding = "ASSETS"
